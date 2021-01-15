@@ -36,6 +36,7 @@ class Garage extends React.Component {
                     <div id="itemContainer">
                       <ul>
                         {this.state.}
+                      </ul>
                     </div>
       </div>
     )
