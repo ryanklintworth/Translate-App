@@ -104,8 +104,8 @@ class Garage extends React.Component {
                     <button id="closeModal" onClick={this.closeModal}>Cancel</button>
                   </div>
                 </div>
-                <button id="openModal" onClick={this.openModal}> Add an item for sale </button>
-                  <h2 id="list">items for sale</h2>
+                <button id="openModal" onClick={this.openModal}> Post an item for sale </button>
+                  <h2 id="list">Items for sale</h2>
                     <div id="itemContainer">
                       <ul>
                         {this.state.items.map((items) => {
