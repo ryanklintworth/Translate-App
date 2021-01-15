@@ -8,4 +8,28 @@
 #navbar a {
   color: white;
   align-self: center;
+  text-decoration: none;
+}
+
+#modal {
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	overflow: auto;
+  display: none;
+}
+
+#modal-textbox {
+	background-color: grey;
+	height: 550px;
+	width: 550px;
+	border-radius: 4px;
+  margin: 150px auto;
+	box-shadow: 4px 4px 0 rgba(207, 94, 255, 0.3);
+  padding: 2%;
+  line-height: 120%;
 }
