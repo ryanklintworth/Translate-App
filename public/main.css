@@ -33,12 +33,12 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-	background-color: grey;
+	background-color: white;
 	height: 450px;
 	width: 350px;
 	border-radius: 4px;
   margin: 150px auto;
-	box-shadow: 4px 4px 0 rgba(207, 94, 255, 0.3);
+	box-shadow: 4px 4px 0 rgba(207, 94, 255, 0.1);
   padding: 2%;
   line-height: 120%;
 }
@@ -52,12 +52,21 @@ body {
   margin-left: 3em;
 }
 
+#list {
+  font-family: helvetica;
+  margin-left: 5em;
+}
+
 #updatebtn {
   margin-top: 2em;
   width: 100%;
 }
 
 #openModal {
+  margin-left: 13em;
+}
+
+#openModal, #updatebtn, #closeModal {
   border-radius: 2px;
   background: linear-gradient(180deg, rgba(22,208,53,1) 0%, rgba(0,120,10,1) 100%);
   border: none;
@@ -72,6 +81,6 @@ body {
 
 }
 
-#openModal:hover {
+#openModal:hover, #updatebtn:hover, #closeModal:hover {
   background: linear-gradient(180deg, rgba(22,208,53,1) 0%, rgba(37,238,67,1) 17%, rgba(37,238,67,1) 50%, rgba(0,102,8,1) 100%);
 }
