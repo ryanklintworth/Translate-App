@@ -8,6 +8,6 @@ const garageSchema = new mongoose.Schema({
   location: String
 })
 
-const Garage = mongoose.model('Garage', garageSchema)
+const Item = mongoose.model('Item', garageSchema)
 
-module.exports = Garage
+module.exports = Item
