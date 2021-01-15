@@ -1,45 +1,161 @@
-const express = require('express')
-const items = express.Router()
+class Garage extends React.Component {
+  state = {
+    name: '',
+    image: '',
+    description: '',
+    price: '',
+    location: '',
+    items: []
+  }
 
-const Item = require('../models/items.js');
-
-
-items.get('/', (req, res) => {
-  Item.find({}, (err, foundItems) => {
-    res.json(founditems)
-  })
-})
-
-items.post('/', (req,res) => {
-  Item.create(req.body, (err, createdItem) => {
-    Item.find({}, (err, foundItems) => {
-    res.json(foundItems)
+  handleChange = (event) => {
+    this.setState({
+      [event.target.id]: event.target.value,
     })
-  })
-})
+  }
 
-items.put('/:id', (req, res) => {
-  Item.findByIdAndUpdate(
-    req.params.id, req.body, {new: true},
-    (err, updatedItem) => {
-      if (err) {
-        res.send(err)
-      }else {
-        Item.find({}, (err, foundItems) => {
-          res.json(foundItems)
-        })
-      }
-    }
-  )
-})
-
-items.delete('/:id', (req, res) => {
-  Item.findByIdAndRemove(req.params.id, (err, deletedItem) => {
-    Item.find({}, (err, foundItems) => {
-      res.json(foundItems)
+  handleSubmit = (event) => {
+    event.preventDefault()
+    axios
+    .post('/items', this.state)
+    .then((response) => {
+      this.setState({
+        items: response.data,
+        name: '',
+        image: '',
+        description: '',
+        price: '',
+        location: ''
+      })
     })
-  })
-})
+  }
 
+  deleteItem = (event) => {
+    axios
+    .delete('/items/' + event.target.value)
+    .then((response) => {
+      this.setState({
+        podcasts: response.data,
+      })
+    })
+  }
 
-module.exports = items
+  updateItem = (event) => {
+    event.preventDefault()
+    const id = event.target.id
+    axios
+    .put('/items/' + id, this.state)
+    .then((response) => {
+      this.setState({
+        items: response.data,
+        name: '',
+        image: '',
+        description: '',
+        price: '',
+        location: ''
+      })
+    })
+  }
+
+  componentDidMount = () => {
+    axios.get('/items').then((response) => {
+      this.setState({
+        items: response.data
+      })
+    })
+  }
+
+  render = () => {
+    return( <div className="main">
+          <nav id="navbar">
+            <a href="#">Home</a>
+            <a href="#">Post</a>
+            <a href="#">Catergories</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Sign Up</a>
+          </nav>
+          <br/><br/>
+            <h2 id="sell">Sell</h2>
+              <form onSubmit={this.handleSubmit}>
+                <label htmlFor="name"><p className="inputText">Name</p></label>
+                  <input type="text" id="name" onChange={this.handleChange} />
+                <label htmlFor="image"><p className="inputText">Image</p></label>
+                  <input type="text" id="image" onChange={this.handleChange} />
+                <label htmlFor="description"><p className="inputText">description</p></label>
+                  <input type="text" id="description" onChange={this.handleChange} />
+                <label htmlFor="price"><p className="inputText">Price</p></label>
+                  <input type="text" id="price" onChange={this.handleChange} />
+                <label htmlFor="location"><p className="inputText">Location</p></label>
+                  <input type="text" id="location" onChange={this.handleChange} />
+              </form>
+                  <h2 id="list">items for sale</h2>
+                    <div id="itemContainer">
+                      <ul>
+                        {this.state.items.map((items) => {
+                          return(
+                            <li>
+                            <p id="itemName">{items.name}</p>
+                            <br/>
+                            <p id="itemDesc">{items.description}</p>
+                            <br/>
+                            <img src={items.image} alt={items.name} />
+                            <br/>
+                            <p id="itemPrice">{items.price}</p>
+                            <br/>
+                            <p id="itemLoc">{items.location}</p>
+                            <br/>
+                            <button value={items._id} onClick={this.deleteItem}>DELETE</button>
+                            <br/><br/>
+                              <details>
+                                <summary>Edit this item</summary>
+                                  <form id={items._id} onSubmit={this.updateItem}>
+                                    <label htmlFor="name">Name</label>
+                                    <br />
+                                      <input
+                                      type="text"
+                                      id="name"
+                                      onChange={this.handleChange}
+                                      />
+                                    <br />
+                                    <label htmlFor="description">description</label>
+                                    <br />
+                                      <input
+                                      type="text"
+                                      id="description"
+                                      onChange={this.handleChange}
+                                      />
+                                    <br />
+                                    <label htmlFor="price">Price</label>
+                                    <br />
+                                      <input
+                                      type="text"
+                                      id="price"
+                                      onChange={this.handleChange}
+                                      />
+                                    <br />
+                                    <label htmlFor="location">Location</label>
+                                    <br />
+                                      <input
+                                      type="text"
+                                      id="location"
+                                      onChange={this.handleChange}
+                                      />
+                                    <br /><br />
+                                      <input id="updatebtn" type="submit" value="Update Item" />
+                                  </form>
+                                </details>
+                              </li>
+
+                          )
+                        })}
+                        </ul>
+                    </div>
+                  </div>
+    )
+  }
+}
+
+ReactDOM.render(
+  <Garage></Garage>,
+  document.querySelector('main'))
