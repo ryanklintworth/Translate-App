@@ -1,14 +1,20 @@
+body {
+  background-color: snow;
+}
+
 #navbar {
   display: flex;
   justify-content: space-around;
-  background-color: black;
-  height: 3em;
+  background-color: cadetblue;
+  height: 2em;
 }
 
 #navbar a {
-  color: white;
+  font-size: 15px;
+  color: black;
   align-self: center;
   text-decoration: none;
+  font-family: helvetica;
 }
 
 #modal {
@@ -24,12 +30,48 @@
 }
 
 #modal-textbox {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 	background-color: grey;
-	height: 550px;
-	width: 550px;
+	height: 450px;
+	width: 350px;
 	border-radius: 4px;
   margin: 150px auto;
 	box-shadow: 4px 4px 0 rgba(207, 94, 255, 0.3);
   padding: 2%;
   line-height: 120%;
+}
+
+.inputText {
+  font-family: arial;
+  margin-left: 1em;
+}
+
+.textbox {
+  margin-left: 3em;
+}
+
+#updatebtn {
+  margin-top: 2em;
+  width: 100%;
+}
+
+#openModal {
+  border-radius: 2px;
+  background: linear-gradient(180deg, rgba(22,208,53,1) 0%, rgba(0,120,10,1) 100%);
+  border: none;
+  color: black;
+  font-family: helvetica;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .1em;
+  cursor: pointer;
+  text-decoration: none;
+  padding: .5em 1em;
+
+}
+
+#openModal:hover {
+  background: linear-gradient(180deg, rgba(22,208,53,1) 0%, rgba(37,238,67,1) 17%, rgba(37,238,67,1) 50%, rgba(0,102,8,1) 100%);
 }
