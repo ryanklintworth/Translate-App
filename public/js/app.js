@@ -84,20 +84,19 @@ class Garage extends React.Component {
             <a href="#">Sign Up</a>
           </nav>
           <br/><br/>
-            <h2 id="sell">Sell</h2>
                 <div id="modal">
                   <div id="modal-textbox">
                     <form onSubmit={this.handleSubmit}>
                       <label htmlFor="name"><p className="inputText">Name</p></label>
-                        <input type="text" id="name" onChange={this.handleChange} />
+                        <input type="text" className="textbox" onChange={this.handleChange} />
                       <label htmlFor="image"><p className="inputText">Image</p></label>
-                        <input type="text" id="image" onChange={this.handleChange} />
+                        <input type="text" className="textbox" onChange={this.handleChange} />
                       <label htmlFor="description"><p className="inputText">description</p></label>
-                        <input type="text" id="description" onChange={this.handleChange} />
+                        <input type="text" className="textbox" onChange={this.handleChange} />
                       <label htmlFor="price"><p className="inputText">Price</p></label>
-                        <input type="text" id="price" onChange={this.handleChange} />
+                        <input type="text" className="textbox" onChange={this.handleChange} />
                       <label htmlFor="location"><p className="inputText">Location</p></label>
-                        <input type="text" id="location" onChange={this.handleChange} />
+                        <input type="text" className="textbox" onChange={this.handleChange} />
                         <br/><br/>
                         <input id="updatebtn" type="submit" value="Create" />
                     </form>
@@ -105,7 +104,7 @@ class Garage extends React.Component {
                     <button id="closeModal" onClick={this.closeModal}>Cancel</button>
                   </div>
                 </div>
-                <button onClick={this.openModal}> Add an item for sale </button>
+                <button id="openModal" onClick={this.openModal}> Add an item for sale </button>
                   <h2 id="list">items for sale</h2>
                     <div id="itemContainer">
                       <ul>
