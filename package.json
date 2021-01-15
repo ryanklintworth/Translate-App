@@ -8,13 +8,13 @@
     "start": "node server.js"
   },
   "repository": {
-  "type": "git",
-  "url": "git+https://github.com/ryanklintworth/garage-sale.git"
+    "type": "git",
+    "url": "git+https://github.com/ryanklintworth/garage-sale.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-  "url": "https://github.com/ryanklintworth/garage-sale/issues"
+    "url": "https://github.com/ryanklintworth/garage-sale/issues"
   },
   "homepage": "https://github.com/ryanklintworth/garage-sale#readme",
   "dependencies": {
