@@ -52,9 +52,18 @@ body {
   margin-left: 3em;
 }
 
+#list {
+  font-family: helvetica;
+  margin-left: 5em;
+}
+
 #updatebtn {
   margin-top: 2em;
   width: 100%;
+}
+
+#openModal {
+  margin-left: 13em;
 }
 
 #openModal, #updatebtn, #closeModal {
