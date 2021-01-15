@@ -6,7 +6,7 @@ const Item = require('../models/items.js');
 
 items.get('/', (req, res) => {
   Item.find({}, (err, foundItems) => {
-    res.json(founditems)
+    res.json(foundItems)
   })
 })
 

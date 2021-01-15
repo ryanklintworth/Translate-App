@@ -18,8 +18,8 @@ app.use(express.static('public'))
 // controllers
 // ================
 
-const moviesController = require('./controllers/items_controller.js')
-app.use('/items', moviesController)
+const itemsController = require('./controllers/items_controller.js')
+app.use('/items', itemsController)
 
 // ================
 // database
