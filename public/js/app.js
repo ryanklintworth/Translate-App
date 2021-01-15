@@ -57,6 +57,14 @@ class Garage extends React.Component {
     })
   }
 
+  openModal = () => {
+    document.getElementById('modal').style.display = 'inline'
+  }
+
+  closeModal = () => {
+    document.getElementById('modal').style.display = "none"
+  }
+
   componentDidMount = () => {
     axios.get('/items').then((response) => {
       this.setState({
@@ -76,19 +84,27 @@ class Garage extends React.Component {
             <a href="#">Sign Up</a>
           </nav>
           <br/><br/>
-            <h2 id="sell">Sell</h2>
-              <form onSubmit={this.handleSubmit}>
-                <label htmlFor="name"><p className="inputText">Name</p></label>
-                  <input type="text" id="name" onChange={this.handleChange} />
-                <label htmlFor="image"><p className="inputText">Image</p></label>
-                  <input type="text" id="image" onChange={this.handleChange} />
-                <label htmlFor="description"><p className="inputText">description</p></label>
-                  <input type="text" id="description" onChange={this.handleChange} />
-                <label htmlFor="price"><p className="inputText">Price</p></label>
-                  <input type="text" id="price" onChange={this.handleChange} />
-                <label htmlFor="location"><p className="inputText">Location</p></label>
-                  <input type="text" id="location" onChange={this.handleChange} />
-              </form>
+                <div id="modal">
+                  <div id="modal-textbox">
+                    <form onSubmit={this.handleSubmit}>
+                      <label htmlFor="name"><p className="inputText">Name</p></label>
+                        <input type="text" className="textbox" onChange={this.handleChange} />
+                      <label htmlFor="image"><p className="inputText">Image</p></label>
+                        <input type="text" className="textbox" onChange={this.handleChange} />
+                      <label htmlFor="description"><p className="inputText">description</p></label>
+                        <input type="text" className="textbox" onChange={this.handleChange} />
+                      <label htmlFor="price"><p className="inputText">Price</p></label>
+                        <input type="text" className="textbox" onChange={this.handleChange} />
+                      <label htmlFor="location"><p className="inputText">Location</p></label>
+                        <input type="text" className="textbox" onChange={this.handleChange} />
+                        <br/><br/>
+                        <input id="updatebtn" type="submit" value="Create" />
+                    </form>
+                    <br/>
+                    <button id="closeModal" onClick={this.closeModal}>Cancel</button>
+                  </div>
+                </div>
+                <button id="openModal" onClick={this.openModal}> Add an item for sale </button>
                   <h2 id="list">items for sale</h2>
                     <div id="itemContainer">
                       <ul>
