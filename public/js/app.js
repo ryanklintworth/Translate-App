@@ -35,7 +35,7 @@ class Garage extends React.Component {
     .delete('/items/' + event.target.value)
     .then((response) => {
       this.setState({
-        podcasts: response.data,
+        items: response.data,
       })
     })
   }
@@ -88,17 +88,17 @@ class Garage extends React.Component {
                   <div id="modal-textbox">
                     <form onSubmit={this.handleSubmit}>
                       <label htmlFor="name"><p className="inputText">Name</p></label>
-                        <input type="text" className="textbox" onChange={this.handleChange} />
+                        <input type="text" id="name" className="textbox" onChange={this.handleChange} />
                       <label htmlFor="image"><p className="inputText">Image</p></label>
-                        <input type="text" className="textbox" onChange={this.handleChange} />
+                        <input type="text" id="image" className="textbox" onChange={this.handleChange} />
                       <label htmlFor="description"><p className="inputText">description</p></label>
-                        <input type="text" className="textbox" onChange={this.handleChange} />
+                        <input type="text" id="description" className="textbox" onChange={this.handleChange} />
                       <label htmlFor="price"><p className="inputText">Price</p></label>
-                        <input type="text" className="textbox" onChange={this.handleChange} />
+                        <input type="text" id="price" className="textbox" onChange={this.handleChange} />
                       <label htmlFor="location"><p className="inputText">Location</p></label>
-                        <input type="text" className="textbox" onChange={this.handleChange} />
+                        <input type="text" id="location" className="textbox" onChange={this.handleChange} />
                         <br/><br/>
-                        <input id="updatebtn" type="submit" value="Create" />
+                        <input type="submit" id="updatebtn" value="Create" />
                     </form>
                     <br/>
                     <button id="closeModal" onClick={this.closeModal}>Cancel</button>
@@ -108,24 +108,24 @@ class Garage extends React.Component {
                   <h2 id="list">Items for sale</h2>
                     <div id="itemContainer">
                       <ul>
-                        {this.state.items.map((items) => {
+                        {this.state.items.map((item) => {
                           return(
                             <li>
-                            <p id="itemName">{items.name}</p>
+                            <p id="itemTitle">{item.name}</p>
                             <br/>
-                            <p id="itemDesc">{items.description}</p>
+                            <p id="itemDesc">{item.description}</p>
                             <br/>
-                            <img src={items.image} alt={items.name} />
+                            <img src={item.image} alt={item.name} />
                             <br/>
-                            <p id="itemPrice">{items.price}</p>
+                            <p id="itemPrice">{item.price}</p>
                             <br/>
-                            <p id="itemLoc">{items.location}</p>
+                            <p id="itemLoc">{item.location}</p>
                             <br/>
-                            <button value={items._id} onClick={this.deleteItem}>DELETE</button>
+                            <button value={item._id} onClick={this.deleteItem}>DELETE</button>
                             <br/><br/>
                               <details>
                                 <summary>Edit this item</summary>
-                                  <form id={items._id} onSubmit={this.updateItem}>
+                                  <form id={item._id} onSubmit={this.updateItem}>
                                     <label htmlFor="name">Name</label>
                                     <br />
                                       <input
@@ -142,6 +142,10 @@ class Garage extends React.Component {
                                       onChange={this.handleChange}
                                       />
                                     <br />
+                                    <label htmlFor="image">Image</label>
+                                    <br />
+                                      <input type="text" id="image" onChange={this.handleChange} />
+                                    <br />  
                                     <label htmlFor="price">Price</label>
                                     <br />
                                       <input
@@ -157,12 +161,11 @@ class Garage extends React.Component {
                                       id="location"
                                       onChange={this.handleChange}
                                       />
-                                    <br /><br />
+                                    <br/><br/>
                                       <input id="updatebtn" type="submit" value="Update Item" />
                                   </form>
                                 </details>
                               </li>
-
                           )
                         })}
                         </ul>
