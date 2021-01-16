@@ -98,7 +98,7 @@ class Garage extends React.Component {
                       <label htmlFor="location"><p className="inputText">Location</p></label>
                         <input type="text" id="location" className="textbox" onChange={this.handleChange} />
                         <br/><br/>
-                        <input type="submit" id="updatebtn" value="Create" />
+                        <input type="submit" onClick={this.closeModal} id="updatebtn" value="Create" />
                     </form>
                     <br/>
                     <button id="closeModal" onClick={this.closeModal}>Cancel</button>
@@ -145,7 +145,7 @@ class Garage extends React.Component {
                                     <label htmlFor="image">Image</label>
                                     <br />
                                       <input type="text" id="image" onChange={this.handleChange} />
-                                    <br />  
+                                    <br />
                                     <label htmlFor="price">Price</label>
                                     <br />
                                       <input
