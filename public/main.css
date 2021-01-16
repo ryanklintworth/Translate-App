@@ -84,3 +84,8 @@ body {
 #openModal:hover, #updatebtn:hover, #closeModal:hover {
   background: linear-gradient(180deg, rgba(22,208,53,1) 0%, rgba(37,238,67,1) 17%, rgba(37,238,67,1) 50%, rgba(0,102,8,1) 100%);
 }
+
+img {
+  width: 15em;
+  height: 15em;
+}
