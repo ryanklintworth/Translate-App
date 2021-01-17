@@ -40,8 +40,8 @@ body {
   justify-content: center;
   flex-direction: column;
 	background-color: white;
-	height: 450px;
-	width: 350px;
+	height: auto;
+	width: 50%;
 	border-radius: 4px;
   margin: 150px auto;
 	box-shadow: 4px 4px 0 rgba(207, 94, 255, 0.1);
