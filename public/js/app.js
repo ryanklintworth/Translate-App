@@ -110,17 +110,14 @@ class Garage extends React.Component {
                       <ul>
                         {this.state.items.map((item) => {
                           return(
+                            <div id="itemblock">
                             <li>
                             <p id="itemTitle">{item.name}</p>
-                            <br/>
                             <p id="itemDesc">{item.description}</p>
-                            <br/>
                             <img src={item.image} alt={item.name} />
                             <br/>
-                            <p id="itemPrice">{item.price}</p>
-                            <br/>
+                            <p id="itemPrice">${item.price}</p>
                             <p id="itemLoc">{item.location}</p>
-                            <br/>
                             <button value={item._id} onClick={this.deleteItem}>DELETE</button>
                             <br/><br/>
                               <details>
@@ -129,7 +126,7 @@ class Garage extends React.Component {
                                     <label htmlFor="name">Name</label>
                                     <br />
                                       <input
-                                      type="text"
+                                      type="text" value={item.name}
                                       id="name"
                                       onChange={this.handleChange}
                                       />
@@ -137,19 +134,19 @@ class Garage extends React.Component {
                                     <label htmlFor="description">description</label>
                                     <br />
                                       <input
-                                      type="text"
+                                      type="text" value={item.description}
                                       id="description"
                                       onChange={this.handleChange}
                                       />
                                     <br />
                                     <label htmlFor="image">Image</label>
                                     <br />
-                                      <input type="text" id="image" onChange={this.handleChange} />
-                                    <br />  
+                                      <input type="text" value={item.image} id="image" onChange={this.handleChange} />
+                                    <br />
                                     <label htmlFor="price">Price</label>
                                     <br />
                                       <input
-                                      type="text"
+                                      type="text" value={item.price}
                                       id="price"
                                       onChange={this.handleChange}
                                       />
@@ -157,7 +154,7 @@ class Garage extends React.Component {
                                     <label htmlFor="location">Location</label>
                                     <br />
                                       <input
-                                      type="text"
+                                      type="text" value={item.location}
                                       id="location"
                                       onChange={this.handleChange}
                                       />
@@ -166,6 +163,7 @@ class Garage extends React.Component {
                                   </form>
                                 </details>
                               </li>
+                              </div>
                           )
                         })}
                         </ul>
