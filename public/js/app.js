@@ -75,14 +75,22 @@ class Garage extends React.Component {
 
   render = () => {
     return( <div className="main">
-          <nav id="navbar">
-            <a href="#">Home</a>
-            <a href="#">Post</a>
-            <a href="#">Catergories</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-            <a href="#">Sign Up</a>
-          </nav><br/><br/>
+          <div class="navbar-fixed">
+          <nav>
+            <div class="nav-wrapper blue-grey lighten-2">
+              <a href="#!" class="brand-logo">Logo</a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="#">Home</a></li>
+                <li><a href="#"onClick={this.openModal}>Post</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Sign Up</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+          <br/><br/>
           <div id="modal">
             <div id="modal-textbox">
               <form onSubmit={this.handleSubmit}>
@@ -117,7 +125,7 @@ class Garage extends React.Component {
                       <br/>
                       <p id="itemPrice">${item.price}</p>
                       <p id="itemLoc">{item.location}</p>
-                      <button value={item._id} onClick={this.deleteItem}>DELETE</button>
+                      <button id="deleteBtn" value={item._id} onClick={this.deleteItem}>DELETE</button>
                       <br/><br/>
                         <details>
                           <summary>Edit this item</summary>

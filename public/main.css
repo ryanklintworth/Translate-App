@@ -72,7 +72,7 @@ body {
   margin-left: 13em;
 }
 
-#openModal, #updatebtn, #closeModal {
+#openModal, #updatebtn, #closeModal, #deleteBtn {
   border-radius: 2px;
   background: linear-gradient(180deg, rgba(22,208,53,1) 0%, rgba(0,120,10,1) 100%);
   border: none;
