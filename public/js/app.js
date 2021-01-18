@@ -75,11 +75,11 @@ class Garage extends React.Component {
 
   render = () => {
     return( <div className="main">
-          <div class="navbar-fixed">
+          <div className="navbar-fixed">
           <nav>
-            <div class="nav-wrapper blue-grey lighten-2">
+            <div className="nav-wrapper blue-grey lighten-2">
               <a href="#!" class="brand-logo">Logo</a>
-              <ul class="right hide-on-med-and-down">
+              <ul className="right hide-on-med-and-down">
                 <li><a href="#">Home</a></li>
                 <li><a href="#"onClick={this.openModal}>Post</a></li>
                 <li><a href="#">Categories</a></li>
@@ -106,9 +106,9 @@ class Garage extends React.Component {
                   <input type="text" id="location" className="textbox" onChange={this.handleChange} />
                   <br/><br/>
                   <input type="submit" onClick={this.closeModal} id="updatebtn" value="Create" />
+                  <button id="closeModal" onClick={this.closeModal}>Cancel</button>
               </form>
               <br/>
-              <button id="closeModal" onClick={this.closeModal}>Cancel</button>
             </div>
           </div>
               <div id="itemContainer">
@@ -128,41 +128,18 @@ class Garage extends React.Component {
                         <details>
                           <summary>Edit this item</summary>
                             <form id={item._id} onSubmit={this.updateItem}>
-                              <label htmlFor="name">Name</label>
-                              <br />
-                                <input
-                                type="text" value={item.name}
-                                id="name"
-                                onChange={this.handleChange}
-                                />
-                              <br />
-                              <label htmlFor="description">description</label>
-                              <br />
-                                <input
-                                type="text" value={item.description}
-                                id="description"
-                                onChange={this.handleChange}
-                                />
-                              <br />
-                              <label htmlFor="image">Image</label>
-                              <br />
-                                <input type="text" value={item.image} id="image" onChange={this.handleChange} />
-                              <br />
-                              <label htmlFor="price">Price</label>
-                              <br />
-                                <input
-                                type="text" value={item.price}
-                                id="price"
-                                onChange={this.handleChange}
-                                />
-                              <br />
-                              <label htmlFor="location">Location</label>
-                              <br />
-                                <input
-                                type="text" value={item.location}
-                                id="location"
-                                onChange={this.handleChange}
-                                />
+                            <label htmlFor="name"><p className="inputText">Name</p></label>
+                              <input type="text" id="name" className="textbox" onChange={this.handleChange} />
+                            <label htmlFor="image"><p className="inputText">Image</p></label>
+                              <input type="text" id="image" className="textbox" onChange={this.handleChange} />
+                            <label htmlFor="description"><p className="inputText">description</p></label>
+                              <input type="text" id="description" className="textbox" onChange={this.handleChange} />
+                            <label htmlFor="price"><p className="inputText">Price</p></label>
+                              <input type="text" id="price" className="textbox" onChange={this.handleChange} />
+                            <label htmlFor="location"><p className="inputText">Location</p></label>
+                              <input type="text" id="location" className="textbox" onChange={this.handleChange} />
+                              <br/><br/>
+                              <input type="submit" onClick={this.closeModal} id="updatebtn" value="Create" />
                               <br/><br/>
                                 <input id="updatebtn" type="submit" value="Update Item" />
                             </form>
