@@ -28,7 +28,7 @@ class Garage extends React.Component {
         location: ''
       })
     })
-    window.location.reload()
+    document.getElementById('form').reset()
   }
 
   deleteItem = (event) => {
@@ -101,7 +101,7 @@ class Garage extends React.Component {
     <br/><br/>
     <div id="modal">
       <div id="modal-textbox">
-        <form onSubmit={this.handleSubmit}>
+        <form id="form" onSubmit={this.handleSubmit}>
           <label htmlFor="name"><p className="inputText">Name</p></label>
             <input
             type="text"
@@ -133,9 +133,9 @@ class Garage extends React.Component {
             className="textbox"
             onChange={this.handleChange} />
             <br/><br/>
-            <input type="submit" onClick={this.closeModal} id="updatebtn" value="Create" />
-            <button id="closeModal" onClick={this.closeModal}>Cancel</button>
+            <input type="submit" onClick={this.closeModal} id="createBtn" class="waves-effect btn-large #b388ff deep-purple accent-1" value="Create" /><br/><br/>
         </form>
+        <button class="waves-effect btn-large #b388ff deep-purple accent-1" onClick={this.closeModal}>Cancel</button>
         <br/>
       </div>
     </div>
@@ -151,9 +151,6 @@ class Garage extends React.Component {
                 <br/>
                 <p id="itemPrice">${item.price}</p>
                 <p id="itemLoc">{item.location}</p>
-                <button class="waves-effect btn #b388ff deep-purple accent-1" value={item._id} onClick={this.deleteItem}><i class="material-icons right">delete_forever</i>DELETE</button>
-                <br/><br/>
-
                   <details>
                     <summary>Edit this item</summary>
                       <form className="editForm" id={item._id} onSubmit={this.updateItem}>
@@ -188,10 +185,11 @@ class Garage extends React.Component {
                         className="textbox"
                         onChange={this.handleChange} />
                         <br/><br/>
-                        <input type="submit" onClick={this.closeModal} id="updatebtn" value="Edit This Item" />
+                        <input type="submit" onClick={this.closeModal} class="waves-effect btn-large #b388ff deep-purple accent-1" value="Edit This Item" />
                         <br/><br/>
                       </form>
-                    </details>
+                    </details><br/>
+                    <button class="waves-effect btn-large #b388ff deep-purple accent-1" value={item._id} onClick={this.deleteItem}><i class="material-icons right">delete_forever</i>DELETE</button>
                   </li>
                 </div>
               )}
