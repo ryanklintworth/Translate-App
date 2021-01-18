@@ -4,6 +4,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  background-size: cover;
 }
 
 form {
@@ -147,13 +148,18 @@ ul {
 }
 
 #itemTitle {
-  font-size: 2em;
+  font-size: 32px;
 }
 
 #itemDesc {
-  margin-left: .7em;
+  font-size: 20px;
 }
 
 #itemPrice {
+  font-size: 20px;
   margin-bottom: -.5em;
+}
+
+#itemLoc {
+  font-size: 20px;
 }
