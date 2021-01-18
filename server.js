@@ -23,7 +23,7 @@ app.use('/items', itemsController)
 
 // ================
 // database
-// ================
+// ===============
 
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
