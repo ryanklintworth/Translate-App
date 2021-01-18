@@ -81,8 +81,8 @@ class Garage extends React.Component {
   render = () => {
     return( <div className="main">
     <div className="navbar-fixed">
-    <nav class="nav-extended #b388ff deep-purple accent-1">
-    <div class="nav-wrapper #b388ff deep-purple accent-1">
+    <nav class="nav-extended">
+    <div class="nav-wrapper">
       <a href="#!" class="brand-logo"><img src="infinitelogo.png" className="logo"/></a>
       <ul class="right hide-on-med-and-down">
         <li><a>Home</a></li>
