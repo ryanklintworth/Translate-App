@@ -58,6 +58,16 @@ form {
   margin-left: 3em;
 }
 
+button {
+  height: auto;
+  width: 100%;
+}
+
+#createBtn {
+  height: auto;
+  width: 100%;
+}
+
 #list {
   font-family: helvetica;
   margin-left: 5em;
@@ -74,11 +84,11 @@ form {
 
 #openModal, #updatebtn, #closeModal, #deleteBtn {
   border-radius: 2px;
-  background: linear-gradient(180deg, rgba(22,208,53,1) 0%, rgba(0,120,10,1) 100%);
+  background: #b388ff;
   border: none;
-  color: black;
+  color: white;
   font-family: helvetica;
-  font-size: 10px;
+  font-size: 20px;
   font-weight: 400;
   letter-spacing: .1em;
   cursor: pointer;
@@ -103,14 +113,14 @@ form {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  height: 500px;
+  width: auto;
 }
 
 #itemContainer {
   display: flex;
   justify-content: space-around;
-  margin-top: 3em;
-  padding: 0;
+  margin-top: 2em;
 }
 
 .container {
