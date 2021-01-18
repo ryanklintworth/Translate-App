@@ -6,7 +6,7 @@ const Item = require('../models/items.js');
 
 items.get('/', (req, res) => {
   Item.find({}, (err, foundItems) => {
-    res.json(founditems)
+    res.json(foundItems)
   })
 })
 
@@ -24,7 +24,7 @@ items.put('/:id', (req, res) => {
     (err, updatedItem) => {
       if (err) {
         res.send(err)
-      }else {
+      } else {
         Item.find({}, (err, foundItems) => {
           res.json(foundItems)
         })
