@@ -85,9 +85,6 @@ class Garage extends React.Component {
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo"><img src="infinitelogo.png" className="logo"/></a>
       <ul class="right hide-on-med-and-down">
-        <li><a>Home</a></li>
-        <li><a>About</a></li>
-        <li><a>Contact</a></li>
       </ul>
     </div>
     <div class="nav-content">
