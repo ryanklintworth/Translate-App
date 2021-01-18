@@ -28,7 +28,7 @@ class Garage extends React.Component {
         location: ''
       })
     })
-    window.location.reload()
+    document.getElementById('form').reset()
   }
 
   deleteItem = (event) => {
@@ -101,7 +101,7 @@ class Garage extends React.Component {
     <br/><br/>
     <div id="modal">
       <div id="modal-textbox">
-        <form onSubmit={this.handleSubmit}>
+        <form id="form" onSubmit={this.handleSubmit}>
           <label htmlFor="name"><p className="inputText">Name</p></label>
             <input
             type="text"
