@@ -85,9 +85,6 @@ class Garage extends React.Component {
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo"><img src="infinitelogo.png" className="logo"/></a>
       <ul class="right hide-on-med-and-down">
-        <li><a>Home</a></li>
-        <li><a>About</a></li>
-        <li><a>Contact</a></li>
       </ul>
     </div>
     <div class="nav-content">
@@ -199,6 +196,21 @@ class Garage extends React.Component {
             )}
           </ul>
         </div>
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">infinite savannah</h5>
+                <p class="grey-text text-lighten-4">Premium long boards</p>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2020 Copyright infinite savannah
+            </div>
+          </div>
+        </footer>
       </div>
     )
   }
