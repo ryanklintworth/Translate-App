@@ -61,7 +61,18 @@ form {
 
 button {
   height: auto;
-  width: 100%;
+  width: 40%;
+  margin: 1em;
+}
+
+#edit {
+  width: 40%;
+  margin: 1em;
+}
+
+#cancel {
+  height: auto;
+  width: 96%;
 }
 
 #createBtn {

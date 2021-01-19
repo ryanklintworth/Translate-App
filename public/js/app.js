@@ -35,6 +35,7 @@ class Garage extends React.Component {
     axios
     .delete('/items/' + event.target.value)
     .then((response) => {
+      alert('are you sure you want to delete')
       this.setState({
         items: response.data,
       })
@@ -132,7 +133,7 @@ class Garage extends React.Component {
             <br/><br/>
             <input type="submit" onClick={this.closeModal} id="createBtn" class="waves-effect btn-large #b388ff deep-purple accent-1" value="Create" /><br/><br/>
         </form>
-        <button class="waves-effect btn-large #b388ff deep-purple accent-1" onClick={this.closeModal}>Cancel</button>
+        <button class="waves-effect btn-large #b388ff deep-purple accent-1" id="cancel" onClick={this.closeModal}>Cancel</button>
         <br/>
       </div>
     </div>
@@ -185,11 +186,11 @@ class Garage extends React.Component {
                         className="textbox"
                         onChange={this.handleChange} />
                         <br/><br/>
-                        <input type="submit" onClick={this.closeModal} class="waves-effect btn-large #b388ff deep-purple accent-1" value="Edit This Item" />
+                        <input type="submit" onClick={this.closeModal} id="edit" class="waves-effect btn-large #b388ff deep-purple accent-1" value="EDIT" />
+                        <button class="waves-effect btn-large #b388ff deep-purple accent-1" value={item._id} onClick={this.deleteItem}><i class="material-icons right"></i>DELETE</button>
                         <br/><br/>
                       </form>
                     </details><br/>
-                    <button class="waves-effect btn-large #b388ff deep-purple accent-1" value={item._id} onClick={this.deleteItem}><i class="material-icons right">delete_forever</i>DELETE</button>
                   </li>
                 </div>
               )}
