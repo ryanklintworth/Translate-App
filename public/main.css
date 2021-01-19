@@ -149,7 +149,8 @@ ul {
 }
 
 #itemDesc {
-  font-size: 20px;
+  font-size: 15px;
+  margin-left: 1em;
 }
 
 #itemPrice {
@@ -168,4 +169,4 @@ ul {
 }
 
 #gif {
-  border: 10px solid rgba(100,0,213,0.6);
+  border: 8px solid rgba(100,0,213,0.5);

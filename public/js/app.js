@@ -137,7 +137,7 @@ class Garage extends React.Component {
       </div>
     </div>
       <section id="gifdiv">
-      <img src="video.gif" id="gif" />
+      <img src="isvideo.gif" id="gif" />
       </section>
         <div id="itemContainer">
           <ul>
