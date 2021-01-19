@@ -139,6 +139,9 @@ class Garage extends React.Component {
         <br/>
       </div>
     </div>
+      <section id="gifdiv">
+      <img src="video.gif" id="gif" />
+      </section>
         <div id="itemContainer">
           <ul>
             {this.state.items.map((item) => {
