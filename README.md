@@ -1,6 +1,3 @@
-# Translate-App
+# Infinite Savannah
 
-Ryan's notes:
-
-Patrick's notes:
-- building app.js using React, model schema in JS, and index.html.  
+Infinite Savannah is an ecommerce website for premium longboards 
